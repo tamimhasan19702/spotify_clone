@@ -19,7 +19,7 @@ function Login() {
     "user-read-playback-position",
     "user-top-read",
    ];
-  window.location.href = `$`
+  window.location.href = `${apiUrl}?client_id=${clientId}&redirect_url=${redirectUrl}&scope=${scope.join(" ")}&response_type=token&show_daialog=true`;
   }
 
   return (
