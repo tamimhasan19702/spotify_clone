@@ -1,10 +1,11 @@
 import React from 'react';
-import styledComponents from 'styled-components';
+import styled from 'styled-components';
+import logoImg from '../imgs/Spotify_Logo_CMYK_Black.png';
 
 function Login() {
   return (
     <Container>
-        <img src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_Cmyk_Black.png" alt="Spotify" />
+        <img src={logoImg} alt="Spotify" />
         <button>Connect Spotify</button>
     </Container>
   )
@@ -12,4 +13,22 @@ function Login() {
 
 export default Login;
 
-const Container = styledComponents.div``;
+const Container = styled.div`
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+height: 100vh;
+width: 100vw;
+background-color: #1db954;
+gap: 5rem;
+
+img{
+  height:20vh;
+}
+
+button{
+  padding: 1rem 5rem;
+  border-radius: 5rem;
+}
+`;
