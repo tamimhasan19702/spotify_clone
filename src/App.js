@@ -1,7 +1,16 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import Login from './Components/Login'
 
 function App() {
+
+  useEffect(() => {
+   const hash = window.location.hash;
+   if(hash){
+    const token = hash.substring(1);
+    console.log(token);
+   }
+  },[]);
+
   return (
     <div>
       <Login />
