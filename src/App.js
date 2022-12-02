@@ -15,8 +15,8 @@ function App() {
     dispatch({type: reducerCases.SET_TOKEN, token})
    }
   },[token, dispatch]);
-  
 
+  
   return (
     <div>
       {token ? <Spotify /> : <Login />}

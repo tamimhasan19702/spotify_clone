@@ -6,6 +6,7 @@ import Body from './Body';
 import Footer from './Footer';
 
 function Spotify() {
+    
   return (
     <Container>
         <div className="spotify-body">
