@@ -26,7 +26,7 @@ function Sidebar() {
             </li>
         </ul>
        </div>
-       <Playlists/>
+       <Playlists />
     </Container>
   )
 }
