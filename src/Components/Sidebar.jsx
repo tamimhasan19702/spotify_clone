@@ -2,6 +2,7 @@ import React from 'react';
 import styledComponents from 'styled-components';
 import { IoLibrary } from 'react-icons/io5';
 import { MdHomeFilled, MdSearch } from 'react-icons/md';
+import Playlists from './Playlists';
 
 function Sidebar() {
   return (
@@ -25,6 +26,7 @@ function Sidebar() {
             </li>
         </ul>
        </div>
+       <Playlists/>
     </Container>
   )
 }
@@ -54,6 +56,16 @@ width: 100%;
         display: flex;
         flex-direction: column;
         gap: 1rem;
+        padding: 1rem;
+        li{
+            display: flex;
+            gap: 1rem;
+            cursor: pointer;
+            transition: 0.3s ease-in-out;
+            &:hover{
+                color: white;
+            }
+        }
     }
 }
 `
