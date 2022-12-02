@@ -5,6 +5,7 @@ import { reducerCases } from './utils/Constants';
 import { useStateProvider } from './utils/StateProvider';
 
 function App() {
+
   const [{ token }, dispatch] = useStateProvider();
 
   useEffect(() => {
@@ -14,6 +15,7 @@ function App() {
     dispatch({type: reducerCases.SET_TOKEN, token})
    }
   },[token, dispatch]);
+  
 
   return (
     <div>
