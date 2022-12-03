@@ -1,11 +1,19 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import styledComponents from 'styled-components';
 import Navbar from './Navbar';
 import Sidebar from './Sidebar';
 import Body from './Body';
 import Footer from './Footer';
+import axios from 'axios';
+import styledComponents from 'styled-components';
+import { useStateProvider } from '../utils/StateProvider';
 
 function Spotify() {
+    const [{token}, dispatch] = useStateProvider();
+
+   useEffect(() => {
+   
+   },[dispatch,token])
     
   return (
     <Container>
