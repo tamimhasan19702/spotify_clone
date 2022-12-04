@@ -5,30 +5,12 @@ import { CgProfile } from 'react-icons/cg';
 import axios from 'axios';
 import { MdGeneratingTokens } from 'react-icons/md';
 import { reducerCases } from '../utils/Constants';
+import { useStateProvider } from '../utils/StateProvider';
 
 function Navbar() {
 
-  useEffect(() => {
-
-  const getUserInfo = async () => {
-    const { data } = await axios.get('https://api.spotify.com/v1/me',{
-      headers : {
-        Authorization: "Bearer " + MdGeneratingTokens,
-        "Content-Type": "application/json",
-      },
-    });
-    
-    const userInfo = {
-      userId: data.id,
-      userName: data.display_name,
-    };
-    dispatch({ type: reducerCases.SET_USER, userInfo});
-  };
-
-getUserInfo();
-
-},[dispatch, token]);
-
+const [{ userInfo }] = useStateProvider();
+console.log({ userInfo });
 
   return (
     <Container>
