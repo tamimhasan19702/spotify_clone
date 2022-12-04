@@ -13,7 +13,6 @@ function App() {
    if(hash){
     const token = hash.substring(1).split("&")[0].split('=')[1];
     dispatch({type: reducerCases.SET_TOKEN, token})
-    console.log(token)
    }
   },[token, dispatch]);
 

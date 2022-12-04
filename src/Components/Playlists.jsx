@@ -9,9 +9,8 @@ export default function Playlists() {
 
   useEffect(() => {
 
-    const getPlaylistData = async () => {
-      const URL = 'https://api.spotify.com/v1/me/playlists';  
-      const response = await axios.get(URL,
+    const getPlaylistData = async () => { 
+      const response = await axios.get('https://api.spotify.com/v1/me/playlists',
         {
           headers: {
             Authorization: "Bearer " + token,
@@ -21,11 +20,11 @@ export default function Playlists() {
       );
 
       const { items } = response.data;
-      console.log(items)
+ 
       const playlists = items.map(({ name, id }) => {
         return { name, id };
       });
-    console.log(playlists)
+  
       dispatch({ type: reducerCases.SET_PLAYLISTS, playlists });
 
     };
@@ -43,7 +42,11 @@ export default function Playlists() {
     <Container>
       <ul>
         {playlists.map(({ name, id }) => {
-          return <li key={id} onClick={() => changeCurrentPlaylist(id)}>{name}</li>
+          return (
+          <li key={id} onClick={() => changeCurrentPlaylist(id)}>
+            {name}
+            </li>
+        );
         })}
       </ul>
     </Container>

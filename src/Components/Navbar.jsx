@@ -7,7 +7,6 @@ import { useStateProvider } from '../utils/StateProvider';
 function Navbar() {
 
 const [{ userInfo }] = useStateProvider();
-console.log(userInfo)
 
   return (
     <Container>
